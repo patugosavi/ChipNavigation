@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/bottom_nav_bar">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/ablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:padding="2dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleTextColor="@color/black"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                android:background="@color/white"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextAppearance="@style/Toolbar.TitleText">
+
+
+                <!--            android:layout_height="?attr/actionBarSize"-->
+                <!--            app:navigationIcon="@drawable/r"-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <TextView
+                        android:layout_weight="4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingStart="5dp"
+                        android:text="Home"
+                        android:textSize="15sp"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="start"
+                        android:layout_gravity="center"/>
+
+
+
+
+                </LinearLayout>
+
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main"/>
+
+    </LinearLayout>
+
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/round_corners"
+        android:elevation="20dp"
+        app:cnb_iconSize="20dp"
+        app:cnb_menuResource="@menu/bottom_navigation"
+        app:cnb_orientationMode="horizontal"
+        app:cnb_radius="4dp"
+        app:cnb_unselectedColor="@android:color/darker_gray" />
+
+</RelativeLayout>
+
+<!--    app:labelVisibilityMode="labeled"-->
+  <!--  android:background="?android:attr/windowBackground"-->
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
